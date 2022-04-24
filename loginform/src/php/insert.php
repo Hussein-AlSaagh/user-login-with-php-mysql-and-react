@@ -12,14 +12,18 @@ $first_name = $data->first_name;
 $last_name = $data->last_name;
 $age = $data->age;
 $gender = $data->gender;
-$email = $data->Email;
+$email = $data->email;
 $password = $data->password;
 
 //set your right port settings the user and password from your webserver environment from your server programm (mamp or xampp)
-$con = mysqli_connect("localhost:8888","root","root");
+$con = mysqli_connect("localhost","root","root");
 //set here your db name for the register form
 mysqli_select_db($con, "react-login-register");
-
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+}
 $sql = "insert into register(
     first_name,
     last_name,

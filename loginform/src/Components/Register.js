@@ -2,7 +2,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
-const Register=()=>{
+const Register=(props)=>{
 
   let history = useNavigate();
   const [data, setData]=useState({
@@ -15,14 +15,14 @@ const Register=()=>{
   })
 
   const handleChange=(e)=>{
-    setData({...data, [e.target.name]: e.target.value});
+    setData({ ...data, [e.target.name]: e.target.value });
 
     //console.log(data);
 
   }
 
   const submitForm=(e)=>{
-    e.preventDefaukt();
+    e.preventDefault();
     const registeredData = {
       first_name: data.first_name,
       last_name: data.last_name,
@@ -33,8 +33,10 @@ const Register=()=>{
     }
     console.log(registeredData);
 
-    axios.post('http://localhost:3000/user-login-with-php-mysql-and-react/loginform/src/php/insert.php', registeredData).then((result)=>{
-      if(result.data.status== 'Invalid'){
+    //this insert.php file must be located on the webserver where the database is also built up not in this project
+    axios.post('http://localhost:8888/php-react/php/insert.php', registeredData)
+    .then((result)=>{
+      if(result.data.Status == 'Invalid'){
         alert('Invalide User');
       }
       else {

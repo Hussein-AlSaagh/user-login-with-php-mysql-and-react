@@ -1,5 +1,12 @@
+import { useState } from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 const Header=()=> {
+  const [auth, setAuth]= useState('');
+  useEffect(()=>{
+    var auth = localStorage.getItem('userName');
+    setAuth(auth);
+  },
+  []);
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -20,7 +27,7 @@ const Header=()=> {
         </li>
       </ul>
       <span class="navbar-text">
-        Useranmeldung
+        Wilkommen: {auth}
       </span>
     </div>
   </div>

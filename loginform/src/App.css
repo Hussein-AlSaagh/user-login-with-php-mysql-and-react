@@ -1,0 +1,15 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  background: linear-gradient(to right, #0b84c7, #f4f4f4);
+}
+.row{
+  padding-top: 20px;
+}
+.main-box{
+  width: 60%;
+  margin: auto;
+}

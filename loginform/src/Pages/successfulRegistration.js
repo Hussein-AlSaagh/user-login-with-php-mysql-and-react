@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom';
-const Dashboard=()=>{
+const Registration=()=>{
   const [auth, setAuth]= useState('');
   const [user, setUser]= useState('');
   let navigate = useNavigate();
@@ -14,9 +14,9 @@ const Dashboard=()=>{
   []);
   return (
     <div className="row">
-      <h1>Danke für deine Anmeldung {user}</h1>
+      <h1>Danke für deine Registrierung {user} du kannst dich jetzt mit deiner registrierten E-Mail anmelden.</h1>
     </div>
   )
 }
 
-export default Dashboard;
+export default Registration;

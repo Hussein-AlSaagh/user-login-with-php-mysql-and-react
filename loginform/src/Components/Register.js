@@ -17,7 +17,7 @@ const Register=(props)=>{
   const handleChange=(e)=>{
     setData({ ...data, [e.target.name]: e.target.value });
 
-    //console.log(data);
+    console.log(data);
 
   }
 
@@ -40,7 +40,7 @@ const Register=(props)=>{
         alert('Invalide User');
       }
       else {
-        history(`/dashboard`);
+        history(`/successfulRegistration`);
       }
 
     });
@@ -57,16 +57,16 @@ const Register=(props)=>{
         </div>
 
         <div className="row">
-          <div className="col-md-6">Vorname</div>
+          <div className="col-md-6">Vorname:*</div>
           <div className="col-md-6">
-            <input type="text" name="first_name" className="form-control" onChange={handleChange} value={data.first_name}/>
+            <input type="text" name="first_name" className="form-control" onChange={handleChange} value={data.first_name} required/>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-md-6">Nachname</div>
+          <div className="col-md-6">Nachname:*</div>
           <div className="col-md-6">
-            <input type="text" name="last_name" className="form-control" onChange={handleChange} value={data.last_name}/>
+            <input type="text" name="last_name" className="form-control" onChange={handleChange} value={data.last_name} required/>
           </div>
         </div>
 
@@ -80,21 +80,26 @@ const Register=(props)=>{
         <div className="row">
           <div className="col-md-6">Geschlecht</div>
           <div className="col-md-6">
-            <input type="text" name="gender" className="form-control" onChange={handleChange} value={data.gender}/>
+            {/*<input type="text" name="gender" className="form-control" onChange={handleChange} value={data.gender}/>*/}
+            <select id="gender" name="gender" className="form-select" onChange={handleChange} value={data.gender}>
+              <option value="w">weiblich</option>
+              <option value="m">männlich</option>
+              <option value="d">divers</option>
+            </select>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-md-6">E-Mail</div>
+          <div className="col-md-6">E-Mail:*</div>
           <div className="col-md-6">
-            <input type="email" name="email" className="form-control" onChange={handleChange} value={data.email}/>
+            <input type="email" name="email" className="form-control" onChange={handleChange} value={data.email} required/>
           </div>
         </div>
 
         <div className="row">
-          <div className="col-md-6">Passwort</div>
+          <div className="col-md-6">Passwort:*</div>
           <div className="col-md-6">
-            <input type="password" name="password" className="form-control" onChange={handleChange} value={data.password}/>
+            <input type="password" name="password" className="form-control" onChange={handleChange} value={data.password} required/>
           </div>
         </div>
 

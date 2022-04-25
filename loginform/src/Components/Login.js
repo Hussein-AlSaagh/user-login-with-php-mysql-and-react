@@ -18,6 +18,8 @@ const Login=(props)=>{
   const submitForm=(e)=>{
     e.preventDefault();
     const registeredData = {
+      first_name: user.first_name,
+      last_name: user.last_name,
       email: user.email,
       password: user.password
     }
@@ -32,7 +34,7 @@ const Login=(props)=>{
         navigate(`/dashboard`);
       }
       else {
-        alert('Invalide User');
+        alert('Die eingebenen Daten sind falsch bitte kontrollieren Sie ihre Eingaben');
       }
 
     });
@@ -51,13 +53,13 @@ const Login=(props)=>{
           </div>
 
           <div className="row">
-            <div className="col-md-6">Passwort</div>
+            <div className="col-md-6">Passwort:</div>
             <div className="col-md-6"><input type="password" name="password" onChange={handleChange} value={user.password}/></div>
           </div>
 
           <div className="row">
-            <div className="col-md-12 text-center">
-              <input type="submit" name="submit" className="btn btn-success" value="Login" />
+            <div className="col-md-12">
+              <input type="submit" name="submit" className="btn btn-success" value="Anmelden" />
             </div>
           </div>
       </form>

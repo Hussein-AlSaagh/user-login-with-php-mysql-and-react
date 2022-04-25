@@ -28,10 +28,10 @@ if($nums>=1){
   http_response_code(200);
   $outp = "";
 
-  $outp .= '{"Email":"'  . $rs["email"] . '",';
-  $outp .= '"Vorname":"'  . $rs["first_name"] . '",';
-  $outp .= '"Nachname":"'  . $rs["last_name"] . '",';
-  $outp .= '"Password":"'  . $rs["password"] . '",';
+  $outp .= '{"email":"'  . $rs["email"] . '",';
+  $outp .= '"first_name":"'  . $rs["first_name"] . '",';
+  $outp .= '"last_name":"'  . $rs["last_name"] . '",';
+  $outp .= '"password":"'  . $rs["password"] . '",';
   $outp .= '"Status":"200"}';
 
   echo $outp;
